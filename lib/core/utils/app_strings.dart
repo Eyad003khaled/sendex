@@ -11,6 +11,8 @@ abstract class AppStrings {
       passwordTextFieldHinttext = "Enter Your Password",
       forgetPassword = "Forgot password?",
       signIn = "Sign In",
+      noInternetTitle = "No Internet Connection",
+      noInternetSubtitle = "Please check your internet connection",
       loginToastSuccess = "Sign In Successfully!",
       loginToastSuccessDesc = "Welcome Back 👋",
       loginToastFailure = "Sign In Failed!",

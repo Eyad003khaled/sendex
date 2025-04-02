@@ -42,6 +42,14 @@ dependencies:
   toastification: ^2.3.0
   shared_preferences: ^2.0.15 
   dio: ^5.7.0
+  dartz: ^0.10.1
+  data_connection_checker_tv: ^0.3.5-nullsafety
+  flutter_offline: ^4.0.0
+  get_it: ^8.0.2
+  flutter_bloc: ^8.1.6
+
+
+
 
 
 
