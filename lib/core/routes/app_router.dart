@@ -26,13 +26,19 @@ class AppRouter {
       case ordersScreen:
         return slideRoute(  const OrdersScreen());
 
-      case orderDetailsScreen:
-      final clientName = settings.arguments as String;
-      final clientAddress = settings.arguments as String;
-        return fadeRoute(   OrderDetailsScreen(
-          clientName: clientName,
-          clientAddress:clientAddress ,
-        ));
+case orderDetailsScreen:
+  final args = settings.arguments as Map<String, String>;
+  final clientName = args['clientName'] ?? ''; // Provide a default value in case the key doesn't exist
+  final clientAddress = args['clientAddress'] ?? '';
+  final status = args['status'] ?? '';
+  return fadeRoute(
+    OrderDetailsScreen(
+      clientName: clientName,
+      clientAddress: clientAddress,
+      status: status,
+    ),
+  );
+
 
       default:
         return MaterialPageRoute(

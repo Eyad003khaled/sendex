@@ -11,9 +11,9 @@ class CustomRedactedOrderItem extends StatelessWidget {
 
 
   const CustomRedactedOrderItem({
-    Key? key,
+    super.key,
 
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +48,9 @@ class CustomRedactedOrderItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Placeholder Placeholder", style: AppTextStyles.manropeSemiBoldstyle14),
+                  const Text("Placeholder Placeholder", style: AppTextStyles.manropeSemiBoldstyle14),
                   const SizedBox(height: 4),
-                  Text("Placeholderrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", style: AppTextStyles.manropeRegularstyle14),
+                  const Text("Placeholderrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", style: AppTextStyles.manropeRegularstyle14),
                   const SizedBox(height: 4),
                   Text("Placeholder",
                       style: AppTextStyles.manropeSemiBoldstyle14.copyWith(

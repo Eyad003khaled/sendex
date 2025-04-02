@@ -5,17 +5,15 @@ import 'package:sendex_test/core/widgets/redacted/custom_redacted_order_item.dar
 import '../../../../core/errors/no_internet_connection.dart';
 import '../../../../core/functions/Toast/custom_toast.dart';
 
+import '../../../../core/routes/app_router.dart';
 import '../cubit/orders_cubit.dart';
 
 import 'items/custom_order_list_view_item.dart';
 
 class OrdersCard extends StatelessWidget {
-
   const OrdersCard({
-    Key? key,
-
-
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class OrdersCard extends StatelessWidget {
       builder: (context, state) {
         if (state is GetOrdersLoadingState) {
           // Return redacted version while loading
-          return CustomRedactedOrderItem();
+          return const CustomRedactedOrderItem();
         } else if (state is GetOrdersFailureState) {
           // Handle failure state
           return NoInternetConnection(
@@ -33,12 +31,8 @@ class OrdersCard extends StatelessWidget {
         } else if (state is GetOrdersSuccessState) {
           return buildOrderssList(
             allOrdersClientName: state.orders.map((c) => c.clientName).toList(),
-            allOrdersAddress: state.orders
-                .map((c) => c.address) // Convert nullable to non-nullable
-                .toList(),
-            allOrdersStatus: state.orders
-                .map((c) => c.status) // Convert nullable to non-nullable
-                .toList(),
+            allOrdersAddress: state.orders.map((c) => c.address).toList(),
+            allOrdersStatus: state.orders.map((c) => c.status).toList(),
             context: context,
           );
         } else {
@@ -55,7 +49,7 @@ class OrdersCard extends StatelessWidget {
     required List<String> allOrdersStatus,
     required BuildContext context,
   }) {
-    // If scroll is disabled, use a Column to display items without scrolling
+    
     return Column(
       children: List.generate(allOrdersClientName.length, (index) {
         return Padding(
@@ -64,6 +58,17 @@ class OrdersCard extends StatelessWidget {
             clientName: allOrdersClientName[index],
             address: allOrdersAddress[index],
             status: allOrdersStatus[index],
+            buttonOnPressed: () {
+              Navigator.pushNamed(
+                context,
+                AppRouter.orderDetailsScreen,
+                arguments: {
+                  'clientName': allOrdersClientName[index],
+                  'clientAddress': allOrdersAddress[index],
+                  'status': allOrdersStatus[index],
+                },
+              );
+            },
           ),
         );
       }),

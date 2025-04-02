@@ -19,7 +19,19 @@ abstract class AppStrings {
       loginToastFailureDesc = "The email or password you entered is incorrect.",
       showDetails = "Show Details",
       pending = "Pending",
+      processing = "Processing",
       shipped = "Shipped",
       delivered = "Delivered",
-      yourOrders = "Your Orders";
+      cancelled = "Cancelled",
+      yourOrders = "Your Orders",
+      clientName = "Client Name : ",
+      clientAddress = "Client Address : ",
+      status = "Status : ",
+      orderDate = "Order Date :  ",
+      orderTotal = "Order Total : ",
+      product = "Product : ",
+      updatedSuccessTitle = "Success !",
+      updatedSuccessSubtitle = "Updated Succesffully !",
+
+      orderInfo = "Order Info  ";
 }

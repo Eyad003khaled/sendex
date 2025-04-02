@@ -7,6 +7,7 @@ import 'package:sendex_test/core/functions/toast/custom_toast.dart';
 import 'package:sendex_test/core/routes/app_router.dart';
 
 import '../../../../../core/database/database_helper.dart';
+import '../../../../../core/services/responsive_helper.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_dimensions.dart';
@@ -124,7 +125,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 68),
+                       SizedBox(height: ResponsiveHelper.getProportionateHeight(context, 68)),
                       FadeInUp(
                         child: CustomButton(
                           text: AppStrings.signIn,

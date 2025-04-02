@@ -5,10 +5,9 @@ import 'package:sendex_test/features/orders/presentation/widgets/sections/orders
 import '../../../../core/services/injection.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../cubit/orders_cubit.dart';
-import '../widgets/orders_card.dart';
 
 class OrdersScreen extends StatelessWidget {
-  const OrdersScreen({Key? key}) : super(key: key);
+  const OrdersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

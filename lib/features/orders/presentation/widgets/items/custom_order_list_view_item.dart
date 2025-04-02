@@ -4,23 +4,27 @@ import 'package:sendex_test/core/utils/app_strings.dart';
 import 'package:sendex_test/core/utils/app_text_styles.dart';
 import 'package:sendex_test/core/widgets/custom_button.dart';
 
+import '../../../../../core/services/responsive_helper.dart';
+
 class CustomOrderListViewItem extends StatelessWidget {
   final String clientName;
   final String address;
   final String status;
+  final VoidCallback buttonOnPressed;
 
   const CustomOrderListViewItem({
-    Key? key,
+    super.key,
     required this.clientName,
     required this.address,
     required this.status,
-  }) : super(key: key);
+    required this.buttonOnPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 450,
-      height: 150,
+      width: ResponsiveHelper.getProportionateWidth(context, 450),
+      height: ResponsiveHelper.getProportionateHeight(context, 110),
     
       
       decoration: BoxDecoration(
@@ -62,7 +66,7 @@ class CustomOrderListViewItem extends StatelessWidget {
             
             SizedBox(
               width: 120, 
-              child: CustomButton(text: AppStrings.showDetails, onPressed: () {}),
+              child: CustomButton(text: AppStrings.showDetails, onPressed: buttonOnPressed),
             ),
             const SizedBox(width: 4),
           ],
