@@ -9,6 +9,7 @@ abstract class AppColors {
   static const Color focusedBorderColor = Color(0xff001A8D);
   static const Color placholderColor = Color(0xff9CA3AF);
   static const Color secondaryButton = Color(0xffF3F4F6);
+  static const Color redactColor = Color(0xffd3d4d3);
 
 
 

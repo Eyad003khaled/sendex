@@ -16,5 +16,10 @@ abstract class AppStrings {
       loginToastSuccess = "Sign In Successfully!",
       loginToastSuccessDesc = "Welcome Back 👋",
       loginToastFailure = "Sign In Failed!",
-      loginToastFailureDesc = "The email or password you entered is incorrect.";
+      loginToastFailureDesc = "The email or password you entered is incorrect.",
+      showDetails = "Show Details",
+      pending = "Pending",
+      shipped = "Shipped",
+      delivered = "Delivered",
+      yourOrders = "Your Orders";
 }

@@ -7,6 +7,7 @@ import '../../features/orders/data/datasources/orders_remote_data_source.dart';
 import '../../features/orders/data/repositories/orders_repository_impl.dart';
 import '../../features/orders/domain/repositories/orders_repository.dart';
 import '../../features/orders/domain/usecases/get_all_orders_usecase.dart';
+
 import '../../features/orders/presentation/cubit/orders_cubit.dart';
 import '../api/api_consumer.dart';
 import '../api/dio_consumer.dart';
@@ -37,7 +38,7 @@ void initGetIt() {
       ordersRemoteDataSource: getIt<OrdersRemoteDataSource>(),
 
       networkInfo: getIt<NetworkInfo>(), 
-      //cacheHelper: getIt<CacheHelper>(),
+
     ),
   );
 
